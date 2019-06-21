@@ -1,21 +1,41 @@
 <template>
   <v-app>
     <v-content>
-      <router-view/>
       <v-container>
+        <router-view/>
         <v-layout>
           <v-flex>
             <v-card>
-              <v-btn flat><router-link to="/about">about</router-link></v-btn>
+              <v-card-title>
+                <div>About</div>
+              </v-card-title>
+              <v-card-actions>
+                <v-btn flat flud><router-link to="/about">about</router-link></v-btn>
+              </v-card-actions>
             </v-card>
             <v-card>
-              <v-btn flat><router-link to="/skill">skill</router-link></v-btn>
+              <v-card-title>
+                Skill
+              </v-card-title>
+              <v-card-actions>
+                <v-btn flat><router-link to="/skill">skill</router-link></v-btn>
+              </v-card-actions>
             </v-card>
             <v-card>
-              <v-btn flat><router-link to="/content">content</router-link></v-btn>
+              <v-card-title>
+                content
+              </v-card-title>
+              <v-card-actions>
+                <v-btn flat><router-link to="/content">content</router-link></v-btn>
+              </v-card-actions>
             </v-card>
             <v-card>
-              <v-btn flat><router-link to="/contact">contact</router-link></v-btn>
+              <v-card-title>
+                Contact
+              </v-card-title>
+              <v-card-actions>
+                <v-btn flat><router-link to="/contact">contact</router-link></v-btn>
+              </v-card-actions>
             </v-card>
           </v-flex>
         </v-layout>
