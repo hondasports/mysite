@@ -13,7 +13,6 @@
         </v-container>
         </v-img>
       </v-card>
-      </v-card>
     </v-flex>
   </v-layout>
 </template>
