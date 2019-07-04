@@ -10,4 +10,10 @@ Vue.use(Vuetify, {
         locales: { ja },
         current: 'ja'
     },
+    theme: {
+        primary: '#9b0038',
+        secondary: '#71031a',
+        accent: '#630019',
+        error: '#660115'
+      }
 })

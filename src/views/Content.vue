@@ -1,9 +1,10 @@
 <template>
-  <div class="about">
-    <h1>This is an contact page</h1>
+  <v-layout>
+    <v-flex>
     twitter: @hondasports8
     facebook:
     github:
     qiita:
-  </div>
+    </v-flex>
+  </v-layout>
 </template>

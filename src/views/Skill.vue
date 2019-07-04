@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an skill page</h1>
+  <v-layout>
+    <v-flex>
     Python (個人開発で使用)
     HTML
     Javascript
@@ -9,5 +9,6 @@
     C (MFC含む)
     Perl
     Java
-  </div>
+    </v-flex>
+  </v-layout>
 </template>

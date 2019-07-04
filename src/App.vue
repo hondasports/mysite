@@ -2,11 +2,10 @@
   <v-app>
     <v-toolbar>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items>
         <v-btn flat flud><router-link to="/about">about</router-link></v-btn>
         <v-btn flat><router-link to="/skill">skill</router-link></v-btn>
         <v-btn flat><router-link to="/content">content</router-link></v-btn>
-        <v-btn flat><router-link to="/contact">contact</router-link></v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <top/>
