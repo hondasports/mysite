@@ -11,9 +11,9 @@ Vue.use(Vuetify, {
         current: 'ja'
     },
     theme: {
-        primary: '#9b0038',
-        secondary: '#71031a',
-        accent: '#630019',
-        error: '#660115'
-      }
+        primary: '#FEFEFA',
+        secondary: '#DDD8D9',
+        mainaccent: '#D55A2E',
+        subaccent: '#E16565'
+    }
 })

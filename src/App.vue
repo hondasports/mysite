@@ -1,11 +1,12 @@
 <template>
-  <v-app>
-    <v-toolbar>
+  <v-app class="primary">
+    <v-toolbar class="primary" flud>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat flud><router-link to="/about">about</router-link></v-btn>
-        <v-btn flat><router-link to="/skill">skill</router-link></v-btn>
-        <v-btn flat><router-link to="/content">content</router-link></v-btn>
+        <v-btn to="/" class="primary black--text">top</v-btn>
+        <v-btn to="/about" class="primary black--text">about</v-btn>
+        <v-btn to="/skill" class="primary black--text">skill</v-btn>
+        <v-btn to="/content" class="primary black--text">content</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <top/>

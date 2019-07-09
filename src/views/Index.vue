@@ -1,12 +1,12 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-card flat>
+      <v-card class="primary">
         <v-card-title>
-          Programming is one of my life...
+          Programming is one of my life
         </v-card-title>
-        <v-card-text>
-          プログラミングは人生の一部と書いたのは、
+        <v-card-text >
+          <div>プログラミングは人生の一部。</div>
           昔異業種への転職も含めて考えていた時に友人からもらったスマホアプリの開発をしている時がありました。
           調べならが徐々にできて行くアプリに楽しさを覚え、それ以来プログラミングが楽しい事、人生の一部になりました。
           そんな気持ちをサブタイトルに込めています。
@@ -19,7 +19,7 @@
 <script>
 
 export default {
-  name: 'App',
+  name: 'index',
   components: {
   },
   data () {
