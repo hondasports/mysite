@@ -10,25 +10,29 @@ export default new Router({
     routes: [{
             path: '/',
             name: 'index',
-            component: index
+            component: index,
+            meta: { title: "Tatsuya's portfolio" }
         },
         {
             path: '/about',
             name: 'about',
             component: () =>
-                import ( /* webpackChunkName: "about" */ './views/About.vue')
+                import ( /* webpackChunkName: "about" */ './views/About.vue'),
+            meta: { title: 'about' }
         },
         {
             path: '/skill',
             name: 'skill',
             component: () =>
-                import ( /* webpackChunkName: "about" */ './views/Skill.vue')
+                import ( /* webpackChunkName: "skill" */ './views/Skill.vue'),
+            meta: { title: 'skill' }
         },
         {
             path: '/content',
             name: 'content',
             component: () =>
-                import ( /* webpackChunkName: "about" */ './views/Content.vue')
+                import ( /* webpackChunkName: "content" */ './views/Content.vue'),
+            meta: { title: 'content' }
         }
     ]
 })
