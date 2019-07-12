@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex>
       <v-card>
-        <v-img :src="require('@/assets/image/header.jpg')">
+        <v-img :src="require('@/assets/image/header.png')">
         <v-container fill-height fluid>
           <v-layout fill-height align-top>
             <v-flex xs12 flexbox text-xs-center>
