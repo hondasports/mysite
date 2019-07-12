@@ -10,7 +10,7 @@
             {{ content.desc }}
           </div>
           <div>
-            <v-btn :href="content.link" flat small>open link</v-btn>
+            <v-btn :href="content.link" flat small icon>link</v-btn>
           </div>
         </v-card-text>
       </v-card>
