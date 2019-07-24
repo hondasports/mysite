@@ -1,6 +1,6 @@
 <template>
   <v-app class="primary">
-    <v-toolbar class="primary" flud>
+    <v-toolbar app class="primary" flud>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn to="/" class="primary black--text">top</v-btn>
@@ -9,15 +9,14 @@
         <v-btn to="/content" class="primary black--text">content</v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <top/>
     <v-content>
+      <top/>
       <v-container>
         <router-view/>
       </v-container>
     </v-content>
     <bottom/>
   </v-app>
-
 </template>
 
 <script>
