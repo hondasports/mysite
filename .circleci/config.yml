@@ -50,8 +50,27 @@ jobs:
               - .
       # run tests!
       #- run: yarn test
+
+  deploy:
+      working_directory: ~/workspace
+      docker:
+          - image: circleci/node:10.15.3
+      steps:
+          - attach_workspace:
+              at: .
+          - run: git checkout git@github.com:hondasports/hondasports.github.io.git
+          - run: git config user.email "hondasports+circleci@users.noreply.github.com"
+          - run: git config user.name "yousan+circleci"
+          - run: cp -r dist/* hondasports.github.io/.
+          - run: git add hondasports.github.io
+          - run: git commit -m 'auto commit by cicleCI'
+          - run: git push origin master
+
 workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
+    version: 2
+    build_and_deploy:
+        jobs:
+            - build
+            - deploy:
+                requires:
+                    - build
