@@ -28,25 +28,25 @@ jobs:
             - v1-dependencies-
 
       - run:
-        name: Install dependencies
-        command: yarn install
+          name: Install dependencies
+          command: yarn install
 
       - run:
-        name: Build
-        command: yarn build
+          name: Build
+          command: yarn build
 
       - run:
-        name: Check dist
-        command: ls -la dist
+          name: Check dist
+          command: ls -la dist
 
       - save_cache:
-        paths:
-          - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - persist_to_workspace:
-        root: .
-        paths:
+          root: .
+          paths:
 
       # run tests!
       #- run: yarn test
