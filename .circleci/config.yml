@@ -58,9 +58,9 @@ jobs:
       steps:
           - attach_workspace:
               at: .
-          - run: git checkout git@github.com:hondasports/hondasports.github.io.git
-          - run: git config user.email "hondasports+circleci@users.noreply.github.com"
-          - run: git config user.name "yousan+circleci"
+          - run: git clone git@github.com:hondasports/hondasports.github.io.git
+          - run: git config user.email "circleci+mysite@noreply.github.com"
+          - run: git config user.name "circleci"
           - command: cp -r dist/* hondasports.github.io/.
           - run: git add hondasports.github.io
           - run: git commit -m 'auto commit by cicleCI'
@@ -71,6 +71,6 @@ workflows:
     build_and_deploy:
         jobs:
             - build
-            # - deploy:
-            #     requires:
-            #         - build
+            - deploy:
+                requires:
+                    - build
