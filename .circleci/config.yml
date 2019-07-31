@@ -60,7 +60,7 @@ jobs:
               at: .
           - add_ssh_keys:
               fingerprints:
-                  - "SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8"
+                  - "d3:e3:74:4b:fd:fb:7d:1c:c7:1e:58:e8:24:1c:bb:27"
           - run: git clone git@github.com:hondasports/hondasports.github.io.git
           - run: git config user.email "circleci+mysite@noreply.github.com"
           - run: git config user.name "circleci"
