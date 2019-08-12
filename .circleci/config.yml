@@ -58,19 +58,24 @@ jobs:
       steps:
           - attach_workspace:
               at: .
-          - run: git clone git@github.com:hondasports/hondasports.github.io.git
-          - run: git config user.email "circleci+mysite@noreply.github.com"
-          - run: git config user.name "circleci"
-          - run: cp -r dist/* hondasports.github.io/.
-          - run: git add hondasports.github.io
-          - run: git commit -m 'auto commit by cicleCI'
-          - run: git push origin master
+          - run:
+              name: push to githubio
+              command: |
+                git clone git@github.com:hondasports/hondasports.github.io.git
+                git config user.email "circleci+mysite@noreply.github.com"
+                git config user.name "circleci"
+                cd hondasports.github.io
+                git rm -r ./*
+                cp -r ../dist/* .
+                git add * ./*
+                git commit -m 'auto commit by cicleCI'
+                git push origin master
 
 workflows:
     version: 2
     build_and_deploy:
         jobs:
             - build
-            # - deploy:
-            #     requires:
-            #         - build
+            - deploy:
+                requires:
+                    - build
