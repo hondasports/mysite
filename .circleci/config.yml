@@ -72,6 +72,7 @@ jobs:
                 git add * ./*
                 git commit -m 'auto commit by CicleCI'
                 git push origin master
+                exit 0
 
 workflows:
     version: 2
