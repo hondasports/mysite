@@ -68,6 +68,7 @@ jobs:
                 git config --global user.name "Circleci"
                 cd ~/workspace/hondasports.github.io
                 git rm -r ./*
+                git commit -m 'auto delete by CicleCI'
                 cp -r ~/workspace/dist/* .
                 git add ./*
                 git status
