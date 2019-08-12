@@ -76,7 +76,7 @@ jobs:
                 cp -r ~/workspace/dist/* .
                 git add ./*
                 git status
-                git commit -m "auto commit by CicleCI https://github.com/hondasports/hondasports.github.io/commit/$CIRCLE_SHA1"
+                git commit -m "auto commit by CicleCI https://github.com/hondasports/mysite/commit/$CIRCLE_SHA1"
                 git push origin master
                 exit 0
 
