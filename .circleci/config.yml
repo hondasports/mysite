@@ -58,6 +58,9 @@ jobs:
       steps:
           - attach_workspace:
               at: .
+          - add_ssh_keys:
+              fingerprints:
+                  - "00:bc:25:05:51:ce:c4:01:a6:17:b0:4b:f6:b0:6e:00"
           - run:
               name: push to githubio
               command: |
