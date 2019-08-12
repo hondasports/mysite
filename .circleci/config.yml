@@ -64,8 +64,8 @@ jobs:
                 mkdir -p ~/.ssh
                 ssh-keyscan github.com >> ~/.ssh/known_hosts
                 git clone git@github.com:hondasports/hondasports.github.io.git
-                git config user.email "circleci+mysite@noreply.github.com"
-                git config user.name "Circleci"
+                git config --local user.email "circleci+mysite@noreply.github.com"
+                git config --local user.name "Circleci"
                 cd hondasports.github.io
                 git rm -r ./*
                 cp -r ~/workspace/dist/* .
