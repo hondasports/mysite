@@ -69,7 +69,7 @@ jobs:
                 cd ~/workspace/hondasports.github.io
                 git rm -r ./*
                 cp -r ~/workspace/dist/* .
-                git add * ./*
+                git add *
                 ls -l
                 git commit -m 'auto commit by CicleCI'
                 git push origin master
