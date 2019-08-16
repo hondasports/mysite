@@ -1,0 +1,93 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+
+      # specify the version you desire here
+      - image: circleci/node:10.15.3
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: yarn install
+
+      - run:
+          name: Build
+          command: yarn build
+
+      - run:
+          name: Check dist
+          command: ls -la dist
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: .
+          paths:
+              - .
+      # run tests!
+      #- run: yarn test
+
+  deploy:
+      working_directory: ~/workspace
+      docker:
+          - image: circleci/node:10.15.3
+      steps:
+          - attach_workspace:
+              at: .
+          - add_ssh_keys:
+              fingerprints:
+                  - "00:bc:25:05:51:ce:c4:01:a6:17:b0:4b:f6:b0:6e:00"
+          - run:
+              name: push to githubio
+              command: |
+                mkdir -p ~/.ssh
+                ssh-keyscan github.com >> ~/.ssh/known_hosts
+                git clone git@github.com:hondasports/hondasports.github.io.git
+                git config --global user.email "circleci+mysite@noreply.github.com"
+                git config --global user.name "Circleci"
+                echo $GIT_COMMIT_ID
+                cd ~/workspace/hondasports.github.io
+                git rm -r ./*
+                git commit -m 'auto delete by CicleCI'
+                cp -r ~/workspace/dist/* .
+                git add ./*
+                git status
+                git commit -m "auto commit by CicleCI https://github.com/hondasports/mysite/commit/$CIRCLE_SHA1"
+                git push origin master
+                exit 0
+
+workflows:
+    version: 2
+    build_and_deploy:
+        jobs:
+            - build
+            - deploy:
+                requires:
+                    - build
+                filters:
+                    branches:
+                        only: master
