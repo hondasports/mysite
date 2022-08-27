@@ -54,7 +54,7 @@ jobs:
   deploy:
       working_directory: ~/workspace
       docker:
-          - image: circleci/node:10.15.3
+          - image: circleci/node:16.17.0
       steps:
           - attach_workspace:
               at: .
